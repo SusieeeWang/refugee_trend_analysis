@@ -1,0 +1,200 @@
+---
+title: "An Overview of Refugee Claims that the Canadian Government Has Received From 2013~2023 (New System)"
+subtitle: "Are There Biases?"
+author: 
+  - Susie Wang
+  - Another author
+thanks: "Code and data are available at: https://github.com/SusieeeWang/refugee_trend_analysis.git"
+date: 1 December 2024
+date-format: long
+abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
+format: pdf
+number-sections: true
+bibliography: references.bib
+---
+
+```{r}
+#| include: false
+#| warning: false
+#| message: false
+
+library(tidyverse)
+library(knitr)
+library(ggplot2)
+```
+
+
+\newpage
+# Introduction
+
+The world is not all peaceful as it seems if we only look at certain developed countries. Many countries are in terrible warfare and their people have to run out of their home countries to seek asylum at where they may not know anyone, neither the language nor the culture and the policies in another country. The developed countries such as Canada has the Refugee Protection Division within the Immigration Board of Canada to decide the result of any refugee claim in Canada. If a refugee protection claim is rejected, then the appliance no longer have the right to stay in Canada and has to be deported, most of the time back to their home countries where they may have experience traumatizing events.
+
+Having the data in hand, we may gain an overview of which race are the most "welcomed" and the most "unwelcomed" to Canada. Moreover, Canada is a friendly and inclusive country for multiculture and multirace, as we have heard. However, we will have to use data to check if biases exist. Moreover, the refugee population does impose pressure on the Canadian economy if number of accepted claims keep growing as the Canadian government provide subsidies for refugees that settle in Canada.
+
+For analysis, we want to use the given data to compare rejected rates across countries and time. We will also predict the future trend of accepting refugee claims and 
+
+Results paragraph
+
+Telegraphing paragraph: The remainder of this paper is structured as follows. @sec-data....
+
+
+# Data {#sec-data}
+
+## Overview
+
+We use the statistical programming language R [@citeR],  with packages `tidyverse` [@citeTidyverse], `ggplot2` [@citeGgplot2], `knitr` [@citeKnitr], 
+Data was taken from Immigration and Refugee Board of Canada https://www.irb-cisr.gc.ca/en/statistics/protection/Pages/index.aspx
+
+
+## Measurement
+	
+The immi
+
+## Outcome variables
+
+Add graphs, tables and text. Use sub-sub-headings for each outcome variable or update the subheading to be singular.
+
+
+
+```{r}
+#| label: fig-bills
+#| fig-cap: Bills of penguins
+#| echo: false
+
+data <- read_csv("../data/clean_data.csv")
+
+row_index <- 1
+Afghan_yearly <- data.frame()
+
+for (i in 0:10){
+  selection <- data[row_index, c(1+1+7*i, 1+2+7*i)]
+  # Bind the selected values row-wise to the Afghan_yearly dataset
+  colnames(selection) <- colnames(Afghan_yearly)
+  Afghan_yearly <- rbind(Afghan_yearly, selection)
+}
+
+```
+
+Talk more about it.
+
+ (You can change the height and width, but don't worry about doing that until you have finished every other aspect of the paper - Quarto will try to make it look nice and the defaults usually work well once you have enough text.)
+
+```{r}
+#| label: fig-planes
+#| fig-cap: Relationship between wing length and width
+#| echo: false
+#| warning: false
+#| message: false
+
+
+```
+
+Talk way more about it. 
+
+## Predictor variables
+
+Add graphs, tables and text.
+
+Use sub-sub-headings for each outcome variable and feel free to combine a few into one if they go together naturally.
+
+
+# Model
+
+The goal of our modelling strategy is twofold. Firstly,...
+
+
+
+## Model set-up
+
+We run the model in R [@citeR] using the `rstanarm` package of @rstanarm. We use the default priors from `rstanarm`.
+
+
+### Model justification
+
+
+
+
+# Results
+
+Our results are summarized in @tbl-modelresults.
+
+```{r}
+#| echo: false
+#| eval: true
+#| warning: false
+#| message: false
+
+library(rstanarm)
+
+```
+
+```{r}
+#| echo: false
+#| eval: true
+#| label: tbl-modelresults
+
+
+```
+
+
+
+
+# Discussion
+
+## First discussion point {#sec-first-point}
+
+If my paper were 10 pages, then should be be at least 2.5 pages. The discussion is a chance to show off what you know and what you learnt from all this. 
+
+## Second discussion point
+
+Please don't use these as sub-heading labels - change them to be what your point actually is.
+
+## Third discussion point
+
+## Weaknesses and next steps
+
+Weaknesses and next steps should also be included.
+
+\newpage
+
+\appendix
+
+# Appendix {-}
+
+
+# Additional data details
+
+# Model details {#sec-model-details}
+
+## Posterior predictive check
+
+ 
+
+```{r}
+#| eval: true
+#| echo: false
+#| message: false
+#| warning: false
+
+```
+
+## Diagnostics
+
+
+
+```{r}
+#| echo: false
+#| eval: true
+#| message: false
+#| warning: false
+
+```
+
+
+
+\newpage
+
+
+# References
+
+
